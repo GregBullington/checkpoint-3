@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js";
-import { tasksService } from "../Services/TasksServices.js"
+import { tasksService } from "../Services/TasksService.js"
 
 
 function _draw() {
@@ -15,6 +15,7 @@ export class TasksController {
   constructor() {
     console.log('controller online');
     ProxyState.on('tasks', _draw)
+    ProxyState.on('tasksItems', _draw)
     _draw()
 
 
@@ -24,9 +25,12 @@ export class TasksController {
     window.event.preventDefault()
     const form = window.event.target
     const newList = {
-      name: form.name.value
+      name: form.name.value,
+      color: form.color.value
     }
+    console.log(newList);
     tasksService.createList(newList)
+    // debugger
     form.reset()
   }
 }
