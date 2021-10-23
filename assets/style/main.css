@@ -78,6 +78,58 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.card {
+  max-width: 300px !important;
+}
+
+.title-bar {
+  min-height: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.color-swatch{
+  width: 23px;
+  height: 23px;
+  margin: 5px;
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  border-color: black;
+  color: rgb(0, 0, 0);
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+}
+input[type="text"] {
+  border: none;
+  background: none;
+  cursor: text;
+  outline: none;
+}
+input:focus{
+  box-shadow: none !important;
+}
+.text-under {
+  border-bottom: 2px solid grey;
+}
+
+
 hr {
   margin: 1rem 0;
   color: inherit;
