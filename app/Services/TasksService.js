@@ -13,5 +13,11 @@ class TasksService {
     const task = new Task(newList)
     ProxyState.tasks = [...ProxyState.tasks, task]
   }
+  deleteTask(id) {
+    if (window.confirm('Are you sure you want to delete this whole list?')) {
+      ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
+      ProxyState.tasksItems = ProxyState.tasksItems.filter(tI => tI.tasksId != id)
+    }
+  }
 }
 export const tasksService = new TasksService()

@@ -3,6 +3,7 @@ import { taskItemsService } from "../Services/TaskItemsService.js";
 export class TaskItemsController {
 
   constructor() {
+    console.log('Tasks Items Controller online');
   }
 
 
@@ -18,6 +19,10 @@ export class TaskItemsController {
     console.log('creating item', taskItemData);
     taskItemsService.createTaskItem(taskItemData)
 
+  }
+
+  deleteItem(id) {
+    taskItemsService.deleteItem(id)
   }
 
 }

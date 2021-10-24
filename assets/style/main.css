@@ -78,8 +78,29 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.xbtn {
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 88%;
+  padding: 12px 16px;
+  transform: translate(0%, -50%);
+}
+.xbtn:focus{
+  box-shadow: none !important;
+}
+
+.gxbtn {
+  cursor: pointer;
+}
+
+.gxbtn:focus{
+  box-shadow: none !important;
+}
+
 .card {
   max-width: 300px !important;
+  word-break: break-all;
 }
 
 .title-bar {

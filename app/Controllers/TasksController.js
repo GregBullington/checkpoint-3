@@ -1,5 +1,7 @@
 import { ProxyState } from "../AppState.js";
+import { taskItemsService } from "../Services/TaskItemsService.js";
 import { tasksService } from "../Services/TasksService.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 
 function _draw() {
@@ -13,9 +15,12 @@ function _draw() {
 export class TasksController {
 
   constructor() {
-    console.log('controller online');
+    console.log('Tasks Controller online');
     ProxyState.on('tasks', _draw)
+    ProxyState.on('tasks', saveState)
     ProxyState.on('tasksItems', _draw)
+    ProxyState.on('tasksItems', saveState)
+    loadState()
     _draw()
 
 
@@ -33,6 +38,11 @@ export class TasksController {
     // debugger
     form.reset()
   }
+
+  deleteTask(id) {
+    tasksService.deleteTask(id)
+  }
+
 }
 
 
