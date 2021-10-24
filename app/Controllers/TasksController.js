@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+// @ts-ignore
 import { taskItemsService } from "../Services/TaskItemsService.js";
 import { tasksService } from "../Services/TasksService.js"
 import { loadState, saveState } from "../Utils/LocalStorage.js"
@@ -30,12 +31,15 @@ export class TasksController {
     window.event.preventDefault()
     const form = window.event.target
     const newList = {
+      // @ts-ignore
       name: form.name.value,
+      // @ts-ignore
       color: form.color.value
     }
     console.log(newList);
     tasksService.createList(newList)
     // debugger
+    // @ts-ignore
     form.reset()
   }
 

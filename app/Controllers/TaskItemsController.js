@@ -11,6 +11,7 @@ export class TaskItemsController {
     window.event.preventDefault()
     const form = window.event.target
     let taskItemData = {
+      // @ts-ignore
       name: form.itemName.value,
       tasksId: tId
     }
