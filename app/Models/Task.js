@@ -15,7 +15,7 @@ export class Task {
     <div style="background-color: ${this.color};" class="title-bar">
     ${this.name}
     <div id="itemQuantity">
-    0/ ${this.itemCount}
+    ${this.incomplete} / ${this.itemCount}
     </div>
     <button class="btn btn-sm xbtn" type="submit" onclick="app.tasksController.deleteTask('${this.id}')">❌</button>
     </div>
@@ -48,6 +48,11 @@ export class Task {
 
   get itemCount() {
     return ProxyState.tasksItems.length
+  }
+  get incomplete() {
+    let unchecked = ProxyState.tasksItems.filter(tI => tI.check == false)
+    return unchecked.length
+
   }
 
 }

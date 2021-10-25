@@ -28,6 +28,7 @@ class TaskItemsService {
     else {
       checked.check = true
     }
+    console.log(checked.check);
     saveState()
     ProxyState.tasksItems = ProxyState.tasksItems
   }
