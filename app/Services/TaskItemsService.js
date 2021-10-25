@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { TaskItem } from "../Models/TaskItem.js";
+import { saveState } from "../Utils/LocalStorage.js";
 
 
 
@@ -18,7 +19,17 @@ class TaskItemsService {
     ProxyState.tasksItems = [...ProxyState.tasksItems, taskItem]
   }
   addCheck(id) {
-    console.log('check mark responding');;
+    //access the task items and find the specific id when called through onclick and change the check boolean value
+    // console.log('check mark responding');
+    let checked = ProxyState.tasksItems.find(tI => tI.id = id)
+    if (checked.check) {
+      checked.check = false
+    }
+    else {
+      checked.check = true
+    }
+    saveState()
+    ProxyState.tasksItems = ProxyState.tasksItems
   }
 
   deleteItem(id) {

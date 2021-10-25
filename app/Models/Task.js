@@ -15,7 +15,7 @@ export class Task {
     <div style="background-color: ${this.color};" class="title-bar">
     ${this.name}
     <div id="itemQuantity">
-    0/0
+    0/ ${this.itemCount}
     </div>
     <button class="btn btn-sm xbtn" type="submit" onclick="app.tasksController.deleteTask('${this.id}')">❌</button>
     </div>
@@ -44,6 +44,10 @@ export class Task {
       template += t.Template
     })
     return template
+  }
+
+  get itemCount() {
+    return ProxyState.tasksItems.length
   }
 
 }
