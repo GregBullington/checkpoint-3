@@ -12,13 +12,13 @@ export class Task {
   get Template() {
     return `
     <div class="col-md-12 card elevation-3 m-3 p-0 h-100">
-    <div style="background-color: ${this.color};" class="title-bar">
-    ${this.name}
-    <div id="itemQuantity">
-    ${this.incomplete} / ${this.itemCount}
-    </div>
-    <button class="btn btn-sm xbtn" type="submit" onclick="app.tasksController.deleteTask('${this.id}')">❌</button>
-    </div>
+      <div style="background-color: ${this.color};" class="title-bar">
+        ${this.name}
+        <div id="itemQuantity">
+          ${this.incomplete} / ${this.itemCount}
+        </div>
+        <button class="btn btn-sm xbtn" type="submit" onclick="app.tasksController.deleteTask('${this.id}')">❌</button>
+      </div>
       <!--list start-->
       <div class="p-4">
         ${this.getItems()}
@@ -29,7 +29,8 @@ export class Task {
           <div class="input-group">
             <input type="text" class="form-control" name="itemName" id="" aria-describedby="helpId"
               placeholder="Add Task...." required minlength="3" maxlength="50">
-            <button class ="btn btn-sm" type ="submit">➕</button>
+            </input>
+            <button class="btn btn-sm" type="submit">➕</button>
           </div>
         </form>
       </div>
