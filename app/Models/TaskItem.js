@@ -12,7 +12,7 @@ export class TaskItem {
   get Template() {
     return `
         <div class="form-row mb-3">
-          <input class="form-check-input" type="checkbox" value="" id="itemCheck" name="itemCheck" onclick="app.taskItemsController.addCheck('${this.id}'')">
+          <input class="form-check-input" type="checkbox" value="" id="itemCheck" name="itemCheck" onclick="app.taskItemsController.addCheck('${this.id}')">
           <label class ="form-check-label" for="itemCheck">
           ${this.name}
           </label>
