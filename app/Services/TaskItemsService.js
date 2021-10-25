@@ -21,7 +21,7 @@ class TaskItemsService {
   addCheck(id) {
     //access the task items and find the specific id when called through onclick and change the check boolean value
     // console.log('check mark responding');
-    let checked = ProxyState.tasksItems.find(tI => tI.id = id)
+    let checked = ProxyState.tasksItems.find(tI => tI.id == id)
     if (checked.check) {
       checked.check = false
     }
