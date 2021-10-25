@@ -17,6 +17,9 @@ class TaskItemsService {
     const taskItem = new TaskItem(taskItemData)
     ProxyState.tasksItems = [...ProxyState.tasksItems, taskItem]
   }
+  addCheck(id) {
+    console.log('check mark responding');;
+  }
 
   deleteItem(id) {
     if (window.confirm('Are you sure you want to delete this item in your list?')) {

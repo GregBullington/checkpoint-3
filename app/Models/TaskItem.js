@@ -2,16 +2,17 @@ import { generateId } from "../Utils/generateId.js";
 
 
 export class TaskItem {
-  constructor(data) {
+  constructor(data, check = false) {
     this.id = data.id || generateId()
     this.name = data.name
     this.tasksId = data.tasksId
+    this.check = check
   }
 
   get Template() {
     return `
         <div class="form-row mb-3">
-          <input class="form-check-input" type="checkbox" value="" id="itemCheck" name="itemCheck" onclick="">
+          <input class="form-check-input" type="checkbox" value="" id="itemCheck" name="itemCheck" onclick="app.taskItemController.addCheck(${this.id})">
           <label class ="form-check-label" for="itemCheck">
           ${this.name}
           </label>

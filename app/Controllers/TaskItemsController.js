@@ -22,6 +22,10 @@ export class TaskItemsController {
 
   }
 
+  addCheck(id) {
+    taskItemsService.addCheck(id)
+  }
+
   deleteItem(id) {
     taskItemsService.deleteItem(id)
   }
