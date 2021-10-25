@@ -14,6 +14,9 @@ export class Task {
     <div class="col-md-12 card elevation-3 m-3 p-0 h-100">
     <div style="background-color: ${this.color};" class="title-bar">
     ${this.name}
+    <div id="itemQuantity">
+    0/0
+    </div>
     <button class="btn btn-sm xbtn" type="submit" onclick="app.tasksController.deleteTask('${this.id}')">❌</button>
     </div>
       <!--list start-->

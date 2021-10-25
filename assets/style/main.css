@@ -105,9 +105,7 @@ body {
 
 .title-bar {
   min-height: 50px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 
