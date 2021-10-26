@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { taskItemsService } from "../Services/TaskItemsService.js";
 import { generateId } from "../Utils/generateId.js";
 
 
@@ -48,11 +49,13 @@ export class Task {
   }
 
   get itemCount() {
-    return ProxyState.tasksItems.length
+    const tasksItems = ProxyState.tasksItems.filter(tI => this.id == tI.tasksId)
+    return tasksItems.length
   }
   get incomplete() {
-    let unchecked = ProxyState.tasksItems.filter(tI => tI.check == false)
-    return unchecked.length
+    let unchecked = ProxyState.tasksItems.filter(tI => this.id == tI.tasksId)
+    let incomplete = unchecked.filter(tI => tI.check == false)
+    return incomplete.length
 
   }
 
